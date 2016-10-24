@@ -1,0 +1,71 @@
+jobs:
+- name: deployCrypto
+  job:
+    deploy:
+      contract: crypto.sol
+      wait: true
+
+- name: callSha256
+  job:
+    call:
+      destination: $deployCrypto
+      function: testSha256
+      data:
+        - this
+        - is
+        - 256
+      wait: true
+
+- name: assert256
+  job:
+    assert:
+      key: $callSha256
+      relation: eq
+      val: 6ffa955749c31a98f50d0a3030c2d9aa663081c5ca423a691d7b44bd55e3c2eb
+
+- name: callSha3
+  job:
+    call:
+      destination: $deployCrypto
+      function: testSha3
+      data:
+        - this
+        - is
+        - 256
+      wait: true
+
+- name: assert256
+  job:
+    assert:
+      key: $callSha256
+      relation: eq
+      val: 6ffa955749c31a98f50d0a3030c2d9aa663081c5ca423a691d7b44bd55e3c2eb
+
+- name: callRipeMd
+  job:
+    call:
+      destination: $deployCrypto
+      function: testRipeMd
+      data:
+        - this
+        - is
+        - 160
+      wait: true
+
+- name: assert256
+  job:
+    assert:
+      key: $callSha256
+      relation: eq
+      val: 6ffa955749c31a98f50d0a3030c2d9aa663081c5ca423a691d7b44bd55e3c2eb
+
+- name: callAddMod
+  job:
+    call:
+      destination: $deployCrypto
+      function: testSha3
+      data:
+        - 30
+        - 13
+        - 3
+      wait: true
