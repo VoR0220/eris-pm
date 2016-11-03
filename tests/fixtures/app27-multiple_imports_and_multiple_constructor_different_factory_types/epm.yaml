@@ -15,7 +15,6 @@ jobs:
     deploy:
       contract: GSFactory.sol
       instance: GSFactory
-      wait: true
 
 # Begin with single constructor contract
 - name: deployGSABIFactorySingle
@@ -23,7 +22,6 @@ jobs:
     deploy:
       contract: GSFactory.sol
       instance: GSSingle
-      wait: true
 
 - name: createGSContractSingle
   job:
@@ -33,7 +31,6 @@ jobs:
       data:
         - $setStorageBase1
       abi: $deployGSFactory
-      wait: true
 
 # Double check created address on single constructor
 - name:  getGSAddrSingle
@@ -74,7 +71,6 @@ jobs:
       data:
         - $setStorageBase2
       abi: $deployGSABIFactorySingle
-      wait: true
 
 - name: queryStorageSingleNew
   job:
@@ -96,7 +92,6 @@ jobs:
     deploy:
       contract: GSFactory.sol
       instance: GSMulti
-      wait: true
 
 - name: createGSContractMulti
   job:
@@ -107,7 +102,6 @@ jobs:
         - $setStorageBase1
         - $setStorageBase2
       abi: $deployGSFactory
-      wait: true
 
 # Double check created address on single constructor
 - name:  getGSAddrMulti
@@ -163,7 +157,6 @@ jobs:
         - $setStorageBase2 
         - $setStorageBase1
       abi: $deployGSABIFactoryMulti
-      wait: true
 
 - name: queryStorageMultiNewFirst
   job:

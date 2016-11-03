@@ -4,7 +4,6 @@ jobs:
   job:
     deploy:
       contract: zero.sol
-      wait: true
 
 - name: queryInt
   job:

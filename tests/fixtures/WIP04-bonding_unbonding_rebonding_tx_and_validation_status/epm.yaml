@@ -22,7 +22,6 @@ jobs:
       target: $bond_account
       permission: bond
       value: "true"
-      wait: true
 
 - name: account
   job:

@@ -10,13 +10,11 @@ jobs:
     deploy:
       contract: binary.sol
       save: true
-      wait: true
 
 - name: deployActualBinaryK
   job:
     deploy:
       contract: binary.bin
-      wait: true
 
 - name: setStorage
   job:
@@ -26,7 +24,6 @@ jobs:
       function: set
       data:
         - $setStorageBase
-      wait: true
 
 - name: queryStorage
   job:

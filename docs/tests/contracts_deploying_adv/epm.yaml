@@ -5,7 +5,6 @@ jobs:
     deploy:
       contract: GSFactory.sol
       instance: all
-      wait: true
 
 - name: createGSContract
   job:
@@ -13,7 +12,6 @@ jobs:
       destination: $deployGSFactory
       data: create
       abi: GSFactory
-      wait: true
 
 - name:  getGSAddr
   job:
@@ -35,7 +33,6 @@ jobs:
       destination: $createGSContract
       data: set $setStorageBase
       abi: GSContract
-      wait: true
 
 - name: queryStorage
   job:

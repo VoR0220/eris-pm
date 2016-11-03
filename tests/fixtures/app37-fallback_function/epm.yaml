@@ -3,21 +3,18 @@ jobs:
   job:
     deploy:
       contract: fallback.sol
-      wait: true
 
 - name: callFallback
   job:
     call:
       destination: $deployC
       function: ()
-      wait: true
 
 - name: getX
   job:
     query-contract:
       destination: $deployC
       function: x 
-      wait: true
 
 - name: assertLevelUp
   job:

@@ -4,7 +4,6 @@ jobs:
   job:
     deploy:
       contract: array.sol
-      wait: true
 
 - name: callWithIntArray
   job:
@@ -13,7 +12,6 @@ jobs:
       function: intCallWithArray 
       data: 
         - [1,2,3,4]
-      wait: true
 
 - name: assertIntCall
   job:
@@ -29,7 +27,6 @@ jobs:
       function: bytesCallWithArray
       data:
         - ["Hello","World","Of","Marmots"]
-      wait: true
 
 - name: assertBytesCall
   job:
@@ -45,7 +42,6 @@ jobs:
       function: boolCallWithArray 
       data:
         - ["true","false","true","false"]
-      wait: true
 
 - name: assertBoolsCall
   job:
@@ -61,7 +57,6 @@ jobs:
       function: addressCallWithArray 
       data:
         - [B806DC304416CA32B5951E3391490813C9F6FF7A,B806DC304416CA32B5951E3391490813C9F6FF7C,B806DC304416CA32B5951E3391490813C9F6FF7D]
-      wait: true
 
 - name: assertAddressCall
   job:

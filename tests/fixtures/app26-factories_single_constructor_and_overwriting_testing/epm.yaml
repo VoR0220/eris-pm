@@ -15,14 +15,12 @@ jobs:
     deploy:
       contract: GSFactory.sol
       instance: GSFactory
-      wait: true
 
 - name: deployGSABIFactory
   job:
     deploy:
       contract: GSFactory.sol
       instance: GSContract
-      wait: true
 
 - name: createGSContract
   job:
@@ -32,7 +30,6 @@ jobs:
       data:
         - $setStorageBase
       abi: $deployGSFactory
-      wait: true
 
 # Double check created address
 - name:  getGSAddr
@@ -73,7 +70,6 @@ jobs:
       data:
         - $setStorageBase2
       abi: $deployGSABIFactory
-      wait: true
 
 - name: queryStorageNew
   job:

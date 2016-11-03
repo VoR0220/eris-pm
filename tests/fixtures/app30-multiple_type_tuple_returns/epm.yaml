@@ -3,7 +3,6 @@ jobs:
   job:
     deploy:
       contract: app30.sol
-      wait: true
 
 - name: queryInts
   job:

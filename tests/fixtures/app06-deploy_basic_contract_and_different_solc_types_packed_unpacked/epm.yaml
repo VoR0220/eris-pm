@@ -4,7 +4,6 @@ jobs:
   job:
     deploy:
       contract: storage.sol
-      wait: true
 
 - name: setStorageBaseBool
   job:
@@ -18,7 +17,6 @@ jobs:
       function: setBool 
       data:
         - $setStorageBaseBool
-      wait: true
 
 - name: queryStorageBool
   job:
@@ -41,7 +39,6 @@ jobs:
       function: setBool2 
       data:
         - true
-      wait: true
 
 - name: queryStorageBool2
   job:
@@ -68,7 +65,6 @@ jobs:
       function: setInt 
       data:
         - $setStorageBaseInt
-      wait: true
 
 - name: queryStorageInt
   job:
@@ -95,7 +91,6 @@ jobs:
       function: setUint 
       data:
         - $setStorageBaseUint
-      wait: true
 
 - name: queryStorageUint
   job:
@@ -122,7 +117,6 @@ jobs:
       function: setAddress 
       data:
         - $setStorageBaseAddress
-      wait: true
 
 - name: queryStorageAddress
   job:
@@ -149,7 +143,6 @@ jobs:
       function: setBytes 
       data:
         - $setStorageBaseBytes
-      wait: true
 
 - name: queryStorageBytes
   job:
@@ -176,7 +169,6 @@ jobs:
       function: setString 
       data:
         - $setStorageBaseString
-      wait: true
 
 - name: queryStorageString
   job:

@@ -4,7 +4,6 @@ jobs:
   job:
     deploy:
       contract: storage.sol
-      wait: true
 
 - name: setStorageBaseString1
   job:
@@ -24,7 +23,6 @@ jobs:
       data:
         - $setStorageBaseString1
         - $setStorageBaseString2
-      wait: true
 
 - name: queryStorageString1
   job:

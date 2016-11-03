@@ -97,7 +97,6 @@ jobs:
       source: $account1
       destination: 58FD1799AA32DED3F6EAC096A1DC77834A446B9C
       amount: $val1
-      wait: true
 
 - name: val1
   job:
@@ -120,7 +119,6 @@ jobs:
       name: $val1
       data: $val2
       fee: $MinersFee
-      wait: true
 
 - name: account_tgt
   job:
@@ -138,7 +136,6 @@ jobs:
       action: unset_base
       target: $account_tgt
       permission: $perm
-      wait: false
 
 - name: setStorage
   job:
@@ -149,14 +146,14 @@ jobs:
   job:
     deploy:
       contract: storage.sol
-      wait: true
 
 - name: setStorage
   job:
     call:
       destination: $deployStorageK
-      data: set $setStorage
-      wait: true
+      function: set
+      data: 
+        - $setStorage
 ```
 
 For more about the jobs eris-pm is capable of performing please see the [Jobs Specification](https://monax.io/docs/documentation/pm/latest/specifications/jobs_specification/).

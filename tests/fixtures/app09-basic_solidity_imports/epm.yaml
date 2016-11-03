@@ -10,7 +10,6 @@ jobs:
     deploy:
       contract: storage.sol
       instance: all
-      wait: true
 
 - name: setStorage
   job:
@@ -19,7 +18,6 @@ jobs:
       function: set
       data:
         - $setStorage
-      wait: true
 
 - name: queryStorage
   job:

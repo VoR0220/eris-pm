@@ -5,7 +5,6 @@ jobs:
     deploy:
       contract: structs0.sol
       instance: Structs0
-      wait: true
 
 - name: addThing0
   job:
@@ -17,7 +16,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen0
   job:
@@ -84,7 +82,6 @@ jobs:
     deploy:
       contract: structs1.sol
       instance: Structs1
-      wait: true
 
 - name: addThing1
   job:
@@ -96,7 +93,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen1
   job:
@@ -111,7 +107,6 @@ jobs:
     deploy:
       contract: structs2.sol
       instance: Structs2
-      wait: true
 
 - name: addThing2
   job:
@@ -123,7 +118,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen2
   job:
@@ -138,7 +132,6 @@ jobs:
     deploy:
       contract: structs3.sol
       instance: Structs3
-      wait: true
 
 - name: addThing3
   job:
@@ -150,7 +143,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen3
   job:
@@ -165,7 +157,6 @@ jobs:
     deploy:
       contract: structs4.sol
       instance: Structs4
-      wait: true
 
 - name: addThing4
   job:
@@ -177,7 +168,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen4
   job:
@@ -192,7 +182,6 @@ jobs:
     deploy:
       contract: structs5.sol
       instance: Structs5
-      wait: true
 
 - name: addThing5
   job:
@@ -204,7 +193,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen5
   job:
@@ -219,7 +207,6 @@ jobs:
     deploy:
       contract: structs6.sol
       instance: Structs6
-      wait: true
 
 - name: addThing6
   job:
@@ -231,7 +218,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen6
   job:
@@ -246,7 +232,6 @@ jobs:
     deploy:
       contract: structs7.sol
       instance: Structs7
-      wait: true
 
 - name: addThing7
   job:
@@ -258,7 +243,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen7
   job:
@@ -273,7 +257,6 @@ jobs:
     deploy:
       contract: structs8.sol
       instance: Structs8
-      wait: true
 
 - name: addThing8
   job:
@@ -285,7 +268,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen8
   job:
@@ -300,7 +282,6 @@ jobs:
     deploy:
       contract: structs9.sol
       instance: Structs9
-      wait: true
 
 - name: addThing9
   job:
@@ -312,7 +293,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen9
   job:
@@ -327,7 +307,6 @@ jobs:
     deploy:
       contract: structs10.sol
       instance: Structs10
-      wait: true
 
 - name: addThing10
   job:
@@ -339,7 +318,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen10
   job:
@@ -354,7 +332,6 @@ jobs:
     deploy:
       contract: structs11.sol
       instance: Structs11
-      wait: true
 
 - name: addThing11
   job:
@@ -366,7 +343,6 @@ jobs:
         - test
         - test
         - test
-      wait: true
 
 - name: assertTen11
   job:

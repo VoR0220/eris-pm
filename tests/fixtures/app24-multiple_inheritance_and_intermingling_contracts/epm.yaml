@@ -6,8 +6,7 @@ jobs:
      deploy:
        contract: three.sol
        instance: one
-       wait: true
-
+ 
  - name: get1i
    job:
      query-contract:
@@ -28,8 +27,7 @@ jobs:
      deploy:
        contract: three.sol
        instance: two
-       wait: true
-
+ 
  - name:  get2i
    job:
      query-contract:
@@ -64,8 +62,7 @@ jobs:
      deploy:
        contract: three.sol
        instance: three
-       wait: true
-
+ 
  - name:  get3i
    job:
      query-contract:

@@ -54,7 +54,7 @@ func SendJob(send *definitions.Send, do *definitions.Do) (string, error) {
 	}
 
 	// Sign, broadcast, display
-	return txFinalize(do, tx, send.Wait)
+	return txFinalize(do, tx)
 }
 
 func RegisterNameJob(name *definitions.RegisterName, do *definitions.Do) (string, error) {
@@ -105,7 +105,6 @@ func RegisterNameJob(name *definitions.RegisterName, do *definitions.Do) (string
 				Amount: record[2],
 				Fee:    name.Fee,
 				Nonce:  name.Nonce,
-				Wait:   name.Wait,
 			}, do)
 
 			if err != nil {
@@ -172,7 +171,7 @@ func registerNameTx(name *definitions.RegisterName, do *definitions.Do) (string,
 	}
 
 	// Sign, broadcast, display
-	return txFinalize(do, tx, name.Wait)
+	return txFinalize(do, tx)
 }
 
 func PermissionJob(perm *definitions.Permission, do *definitions.Do) (string, error) {
@@ -229,7 +228,7 @@ func PermissionJob(perm *definitions.Permission, do *definitions.Do) (string, er
 	}
 
 	// Sign, broadcast, display
-	return txFinalize(do, tx, perm.Wait)
+	return txFinalize(do, tx)
 }
 
 func BondJob(bond *definitions.Bond, do *definitions.Do) (string, error) {
@@ -256,7 +255,7 @@ func BondJob(bond *definitions.Bond, do *definitions.Do) (string, error) {
 	}
 
 	// Sign, broadcast, display
-	return txFinalize(do, tx, bond.Wait)
+	return txFinalize(do, tx)
 }
 
 func UnbondJob(unbond *definitions.Unbond, do *definitions.Do) (string, error) {
@@ -295,7 +294,7 @@ func UnbondJob(unbond *definitions.Unbond, do *definitions.Do) (string, error) {
 	}
 
 	// Sign, broadcast, display
-	return txFinalize(do, tx, unbond.Wait)
+	return txFinalize(do, tx)
 }
 
 func RebondJob(rebond *definitions.Rebond, do *definitions.Do) (string, error) {
@@ -334,15 +333,15 @@ func RebondJob(rebond *definitions.Rebond, do *definitions.Do) (string, error) {
 	}
 
 	// Sign, broadcast, display
-	return txFinalize(do, tx, rebond.Wait)
+	return txFinalize(do, tx)
 }
 
-func txFinalize(do *definitions.Do, tx interface{}, wait bool) (string, error) {
+func txFinalize(do *definitions.Do, tx interface{}) (string, error) {
 	var result string
 
 	erisNodeClient := client.NewErisNodeClient(do.Chain)
 	erisKeyClient := keys.NewErisKeyClient(do.Signer)
-	res, err := core.SignAndBroadcast(do.ChainID, erisNodeClient, erisKeyClient, tx.(txs.Tx), true, true, wait)
+	res, err := core.SignAndBroadcast(do.ChainID, erisNodeClient, erisKeyClient, tx.(txs.Tx), true, true, true)
 	if err != nil {
 		return util.MintChainErrorHandler(do, err)
 	}

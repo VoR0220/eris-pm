@@ -12,14 +12,12 @@ jobs:
       target: $addr2
       permission: call
       value: "true"
-      wait: true
 
 - name: deployPermK
   job:
     deploy:
       contract: permissions.sol
       instance: permSNative
-      wait: true
 
 # contract needs perms
 - name: permContractAddRoles
@@ -29,7 +27,6 @@ jobs:
       target: $deployPermK
       permission: add_role
       value: "true"
-      wait: true
 
 - name: permContractRmRoles
   job:
@@ -38,7 +35,6 @@ jobs:
       target: $deployPermK
       permission: rm_role
       value: "true"
-      wait: true
 
 - name: permContractSetBase
   job:
@@ -47,7 +43,6 @@ jobs:
       target: $deployPermK
       permission: set_base
       value: "true"
-      wait: true
 
 - name: permContractUnsetBase
   job:
@@ -56,7 +51,6 @@ jobs:
       target: $deployPermK
       permission: unset_base
       value: "true"
-      wait: true
 
 - name: roleSetup
   job:
@@ -64,7 +58,6 @@ jobs:
       action: add_role
       target: $addr2
       role: marmots_deny
-      wait: true
 
 # roles
 - name: checkRole1
@@ -75,7 +68,6 @@ jobs:
       data:
         - $addr2
         - marmots_deny
-      wait: true
 
 - name: assertRole1
   job:
@@ -92,7 +84,6 @@ jobs:
       data: 
         - $addr2
         - $role
-      wait: true
 
 - name: checkRole2
   job:
@@ -102,7 +93,6 @@ jobs:
       data:
         - $addr2
         - $role
-      wait: true
 
 - name: assertRole2
   job:
@@ -119,7 +109,6 @@ jobs:
       data:
         - $addr2
         - $role
-      wait: true
 
 - name: checkRole3
   job:
@@ -146,7 +135,6 @@ jobs:
       data:
         - $addr2
         - 2118
-      wait: true
 
 - name: assertBase1
   job:
@@ -163,7 +151,6 @@ jobs:
       data: 
         - $addr2
         - 14846
-      wait: true
 
 - name: assertBase
   job:
@@ -181,7 +168,6 @@ jobs:
         - $addr2
         - 2119
         - true
-      wait: true
 
 - name: checkBase3
   job:
@@ -191,7 +177,6 @@ jobs:
       data:
         - $addr2
         - 2119
-      wait: true
 
 - name: assertBase
   job:
@@ -208,7 +193,6 @@ jobs:
       data:
         - $addr2
         - 2119
-      wait: true
 
 - name: checkBase4
   job:
@@ -218,7 +202,6 @@ jobs:
       data:
         - $addr2
         - 2119
-      wait: true
 
 - name: assertBase
   job:

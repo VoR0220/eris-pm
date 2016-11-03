@@ -33,7 +33,6 @@ jobs:
       data: 
         - $setIntStorage
         - 3
-      wait: true
 
 - name: queryIntStorage
   job:
@@ -56,7 +55,6 @@ jobs:
       data: 
         - $setBoolStorage
         - true
-      wait: true
 
 - name: queryBoolStorage
   job:
@@ -102,7 +100,6 @@ jobs:
       data: 
         - $setBytesStorage
         - "marmots"
-      wait: true
 
 - name: queryBytesStorage
   job:
@@ -122,10 +119,9 @@ jobs:
     deploy:
       contract: ./storage.sol
       instance: SimpleConstructorArray
-      data: 
+      data:
         - $setArrayStorage
         - [4, 5, 6]
-      wait: true
 
 - name: queryArrayStorage
   job:

@@ -4,7 +4,6 @@ jobs:
   job:
     deploy:
       contract: storage.sol
-      wait: true
 
 # first run
 - name: setStorageBaseString1
@@ -19,7 +18,6 @@ jobs:
       function: setString 
       data:
         - $setStorageBaseString1
-      wait: true
 
 - name: queryStorageString1
   job:
@@ -47,7 +45,6 @@ jobs:
       function: setString 
       data:
         - $setStorageBaseString2
-      wait: true
 
 - name: queryStorageString2
   job:
@@ -75,7 +72,6 @@ jobs:
       function: setString 
       data: 
         - $setStorageBaseString3
-      wait: true
 
 - name: queryStorageString3
   job:
@@ -103,7 +99,6 @@ jobs:
       function: setString
       data:
         - $setStorageBaseString4
-      wait: true
 
 - name: queryStorageString4
   job:
@@ -136,7 +131,6 @@ jobs:
       function: setString
       data:
         - $setStorageBaseString5
-      wait: true
 
 - name: queryStorageString5
   job:

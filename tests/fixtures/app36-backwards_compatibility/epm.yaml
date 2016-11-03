@@ -25,7 +25,6 @@ jobs:
     deploy:
       contract: c.sol
       data: $setStorage1 $setStorage2
-      wait: true
 
 - name: queryConstructor
   job:
@@ -45,7 +44,6 @@ jobs:
     call:
       destination: $deployC
       data: updateStorage $setStorage3 $setStorage4
-      wait: true
 
 - name: queryStorage
   job:

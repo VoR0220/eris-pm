@@ -85,7 +85,7 @@ func DeployJob(deploy *definitions.Deploy, do *definitions.Do) (result string, e
 			result := "could not deploy binary contract"
 			return result, err
 		}
-		result, err := deployFinalize(do, tx, deploy.Wait)
+		result, err := deployFinalize(do, tx)
 		if err != nil {
 			return "", fmt.Errorf("Error finalizing contract deploy %s: %v", p, err)
 		}
@@ -212,7 +212,7 @@ func deployContract(deploy *definitions.Deploy, do *definitions.Do, r response.R
 	}
 
 	// Sign, broadcast, display
-	result, err := deployFinalize(do, tx, deploy.Wait)
+	result, err := deployFinalize(do, tx)
 	if err != nil {
 		return "", fmt.Errorf("Error finalizing contract deploy %s: %v", p, err)
 	}
@@ -324,7 +324,7 @@ func CallJob(call *definitions.Call, do *definitions.Do) (string, []*definitions
 
 	// Sign, broadcast, display
 
-	res, err := core.SignAndBroadcast(do.ChainID, erisNodeClient, erisKeyClient, tx, true, true, call.Wait)
+	res, err := core.SignAndBroadcast(do.ChainID, erisNodeClient, erisKeyClient, tx, true, true, true)
 	if err != nil {
 		var str, err = util.MintChainErrorHandler(do, err)
 		return str, make([]*definitions.Variable, 0), err
@@ -364,12 +364,12 @@ func CallJob(call *definitions.Call, do *definitions.Do) (string, []*definitions
 	return result, call.Variables, nil
 }
 
-func deployFinalize(do *definitions.Do, tx interface{}, wait bool) (string, error) {
+func deployFinalize(do *definitions.Do, tx interface{}) (string, error) {
 	var result string
 
 	erisNodeClient := client.NewErisNodeClient(do.Chain)
 	erisKeyClient := keys.NewErisKeyClient(do.Signer)
-	res, err := core.SignAndBroadcast(do.ChainID, erisNodeClient, erisKeyClient, tx.(txs.Tx), true, true, wait)
+	res, err := core.SignAndBroadcast(do.ChainID, erisNodeClient, erisKeyClient, tx.(txs.Tx), true, true, true)
 	if err != nil {
 		return util.MintChainErrorHandler(do, err)
 	}

@@ -10,14 +10,12 @@ jobs:
     deploy:
       contract: Factory.sol
       instance: GSFactory
-      wait: true
 
 - name: deployGSABIFactory
   job:
     deploy:
       contract: Factory.sol
       instance: Storage
-      wait: true
 
 - name: createGSContract1
   job:
@@ -25,7 +23,6 @@ jobs:
       destination: $deployGSFactory
       function: create
       abi: GSFactory
-      wait: true
 
 - name: createGSContract2
   job:
@@ -33,7 +30,6 @@ jobs:
       destination: $deployGSFactory
       function: create
       abi: GSFactory
-      wait: true
 
 - name: createGSContract3
   job:
@@ -41,7 +37,6 @@ jobs:
       destination: $deployGSFactory
       function: create
       abi: GSFactory
-      wait: true
 
 - name: getLastAddr
   job:
@@ -70,7 +65,6 @@ jobs:
       data:
         - $setStorageBase
       abi: $deployGSABIFactory
-      wait: true
 
 - name: queryStorage1
   job:
@@ -94,7 +88,6 @@ jobs:
       data:
         - $setStorageBase
       abi: $deployGSABIFactory
-      wait: true
 
 - name: queryStorage2
   job:
@@ -118,7 +111,6 @@ jobs:
       data:
         - $setStorageBase
       abi: $deployGSABIFactory
-      wait: true
 
 - name: queryStorage3
   job:
@@ -141,7 +133,6 @@ jobs:
       destination: $deployGSFactory
       function: create
       abi: GSFactory
-      wait: true
 
 - name: getLastAddr
   job:

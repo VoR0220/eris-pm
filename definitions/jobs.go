@@ -35,8 +35,6 @@ type Send struct {
 	// (Optional, advanced only) nonce to use when eris-keys signs the transaction (do not use unless you
 	// know what you're doing)
 	Nonce string `mapstructure:"nonce" json:"nonce" yaml:"nonce" toml:"nonce"`
-	// (Optional) wait for the transaction to be confirmed in the blockchain before proceeding
-	Wait bool `mapstructure:"wait" json:"wait" yaml:"wait" toml:"wait"`
 }
 
 type RegisterName struct {
@@ -56,8 +54,6 @@ type RegisterName struct {
 	// (Optional, advanced only) nonce to use when eris-keys signs the transaction (do not use unless you
 	// know what you're doing)
 	Nonce string `mapstructure:"nonce" json:"nonce" yaml:"nonce" toml:"nonce"`
-	// (Optional) wait for the transaction to be confirmed in the blockchain before proceeding
-	Wait bool `mapstructure:"wait" json:"wait" yaml:"wait" toml:"wait"`
 }
 
 type Permission struct {
@@ -78,8 +74,6 @@ type Permission struct {
 	// (Optional, advanced only) nonce to use when eris-keys signs the transaction (do not use unless you
 	// know what you're doing)
 	Nonce string `mapstructure:"nonce" json:"nonce" yaml:"nonce" toml:"nonce"`
-	// (Optional) wait for the transaction to be confirmed in the blockchain before proceeding
-	Wait bool `mapstructure:"wait" json:"wait" yaml:"wait" toml:"wait"`
 }
 
 type Bond struct {
@@ -92,8 +86,6 @@ type Bond struct {
 	// (Optional, advanced only) nonce to use when eris-keys signs the transaction (do not use unless you
 	// know what you're doing)
 	Nonce string `mapstructure:"nonce" json:"nonce" yaml:"nonce" toml:"nonce"`
-	// (Optional) wait for the transaction to be confirmed in the blockchain before proceeding
-	Wait bool `mapstructure:"wait" json:"wait" yaml:"wait" toml:"wait"`
 }
 
 type Unbond struct {
@@ -102,8 +94,6 @@ type Unbond struct {
 	// (Required) block on which the unbonding will take place (users may unbond at any
 	// time >= currentBlock)
 	Height string `mapstructure:"height" json:"height" yaml:"height" toml:"height"`
-	// (Optional) wait for the transaction to be confirmed in the blockchain before proceeding
-	Wait bool `mapstructure:"wait" json:"wait" yaml:"wait" toml:"wait"`
 }
 
 type Rebond struct {
@@ -112,8 +102,6 @@ type Rebond struct {
 	// (Required) block on which the rebonding will take place (users may rebond at any
 	// time >= (unbondBlock || currentBlock))
 	Height string `mapstructure:"height" json:"height" yaml:"height" toml:"height"`
-	// (Optional) wait for the transaction to be confirmed in the blockchain before proceeding
-	Wait bool `mapstructure:"wait" json:"wait" yaml:"wait" toml:"wait"`
 }
 
 // ------------------------------------------------------------------------
@@ -164,8 +152,6 @@ type Deploy struct {
 	// (Optional, advanced only) nonce to use when eris-keys signs the transaction (do not use unless you
 	// know what you're doing)
 	Nonce string `mapstructure:"nonce" json:"nonce" yaml:"nonce" toml:"nonce"`
-	// (Optional) wait for the transaction to be confirmed in the blockchain before proceeding
-	Wait bool `mapstructure:"wait" json:"wait" yaml:"wait" toml:"wait"`
 	// (Optional) todo
 	Variables []*Variable
 }
@@ -199,8 +185,6 @@ type Call struct {
 	// return from the call job as the result of the call job then select "tx" on the save
 	// variable. Anything other than "tx" in this field will use the default.
 	Save string `mapstructure:"save" json:"save" yaml:"save" toml:"save"`
-	// (Optional) wait for the transaction to be confirmed in the blockchain before proceeding
-	Wait bool `mapstructure:"wait" json:"wait" yaml:"wait" toml:"wait"`
 	// (Optional) the call job's returned variables
 	Variables []*Variable
 }
