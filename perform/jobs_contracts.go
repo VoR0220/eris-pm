@@ -169,7 +169,7 @@ func deployContract(deploy *definitions.Deploy, do *definitions.Do, r response.R
 	var abiLocation string
 	if r.Objectname != "" {
 		abiLocation = filepath.Join(do.ABIPath, r.Objectname)
-		log.WithField("=>", abiLocation).Debug("Saving ABI")
+		log.WithField("=>", abiLocation).Info("Saving ABI")
 		if err := ioutil.WriteFile(abiLocation, []byte(r.ABI), 0664); err != nil {
 			return "", err
 		}
