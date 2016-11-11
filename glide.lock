@@ -1,5 +1,5 @@
-hash: 32f6b555e66ee858a3e6ebfdc3a46ee685758a2c55414af1b80ffec835685b5f
-updated: 2016-11-02T15:54:37.224949887+01:00
+hash: ae0f166785bcad2420f726d76de1b713c0104885707e864f50246226415dd47b
+updated: 2016-11-11T16:37:03.301352482-06:00
 imports:
 - name: github.com/btcsuite/btcd
   version: 6b8a24918e53e3c928df3eef0fd06f1c94e7e1cd
@@ -21,12 +21,12 @@ imports:
   - go/common
   - go/docs
 - name: github.com/eris-ltd/eris-compilers
-  version: d3c710fb329cd0fbff47fe8e83deb04040a78b8f
+  version: 97a436228c8b53d1741f4e500b4bd9bd033ddd90
   subpackages:
   - network
   - util
 - name: github.com/eris-ltd/eris-db
-  version: dfef80c878c114ec71862aca00ce5c4f0824d8c3
+  version: e3cb52bfbefb83e05d9d3845f12ea9405ba41608
   subpackages:
   - account
   - client

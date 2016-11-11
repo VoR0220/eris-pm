@@ -3,6 +3,7 @@ import:
 - package: github.com/eris-ltd/eris-db
   version: develop
 - package: github.com/eris-ltd/eris-compilers
+  version: develop
   subpackages:
   - network
   - util

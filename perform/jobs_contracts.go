@@ -169,7 +169,7 @@ func deployContract(deploy *definitions.Deploy, do *definitions.Do, r response.R
 	var abiLocation string
 	if r.Objectname != "" {
 		abiLocation = filepath.Join(do.ABIPath, r.Objectname)
-		log.WithField("=>", abiLocation).Info("Saving ABI")
+		log.WithField("=>", abiLocation).Warn("Saving ABI")
 		if err := ioutil.WriteFile(abiLocation, []byte(r.ABI), 0664); err != nil {
 			return "", err
 		}
@@ -181,7 +181,7 @@ func deployContract(deploy *definitions.Deploy, do *definitions.Do, r response.R
 	if deploy.SaveBinary {
 		contractDir := filepath.Dir(deploy.Contract)
 		contractName := filepath.Join(contractDir, fmt.Sprintf("%s.bin", strings.TrimSuffix(deploy.Contract, filepath.Ext(deploy.Contract))))
-		log.WithField("=>", contractName).Info("Saving Binary")
+		log.WithField("=>", contractName).Warn("Saving Binary")
 		if err := ioutil.WriteFile(contractName, []byte(contractCode), 0664); err != nil {
 			return "", err
 		}
